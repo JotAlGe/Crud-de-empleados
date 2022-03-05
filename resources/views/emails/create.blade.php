@@ -1,10 +1,10 @@
 @extends('layout')
 
+{{-- success message --}}
+@include('partials.success')
+
 @section('content')
 
-    @if(@session('success'))
-        {{ @session('success') }}
-    @endif
     <form class="max-w-screen-lg" action="{{ route('emails.store') }}" method="POST">
         @csrf
 
