@@ -5,9 +5,18 @@
 
 @section('content')
 
+
     <form class="max-w-screen-lg" action="{{ route('emails.store') }}" method="POST">
         @csrf
 
+        {{-- error messages --}}
+        <div class="text-center text-red-400">
+            <small class="text-center">
+                @error('name')
+                    * {{ $message }}
+                @enderror
+            </small>
+        </div>
         {{-- name --}}
         <div class="md:flex md:items-center mb-6">
             <div class="md:w-1/3">
@@ -21,6 +30,16 @@
             </div>
         </div>
 
+
+
+        {{-- error messages --}}
+        <div class="text-center text-red-400">
+            <small class="text-center">
+                @error('email')
+                    * {{ $message }}
+                @enderror
+            </small>
+        </div>
         {{-- email --}}
         <div class="md:flex md:items-center mb-6">
             <div class="md:w-1/3">
@@ -34,6 +53,15 @@
             </div>
         </div>
 
+
+        {{-- error messages --}}
+        <div class="text-center text-red-400">
+            <small class="text-center">
+                @error('message')
+                    * {{ $message }}
+                @enderror
+            </small>
+        </div>
         {{-- message --}}
         <div class="md:flex md:items-center mb-6">
             <div class="md:w-1/3">
