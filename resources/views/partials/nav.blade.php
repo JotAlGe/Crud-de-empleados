@@ -21,9 +21,9 @@
                     ">
                     Usuarios
                 </a>
-                {{-- <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-white-300 hover:text-white">
-                    Blog
-                </a> --}}
+                <a href="{{ route('emails.index') }}" class="block mt-4 lg:inline-block lg:mt-0 text-white-300 hover:text-white">
+                    Envíanos un Email
+                </a>
             </div>
 
         </div>
