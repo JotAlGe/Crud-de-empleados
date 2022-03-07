@@ -6,7 +6,7 @@
 
 
 @section('content')
-<form class="w-full max-w-sm border-solid border-2 border-purple-500 p-5 rounded-lg" method="POST" action="{{ route('users.update', $user->id) }}">
+<form class="w-full max-w-sm border-solid border-2 border-purple-500 p-5 rounded-lg" method="POST" action="{{ route('users.update', $user) }}">
     @method('PATCH')
 
     {{-- include partials validation --}}

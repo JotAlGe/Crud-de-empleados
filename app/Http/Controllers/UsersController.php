@@ -33,18 +33,8 @@ class UsersController extends Controller
     function store(SaveUserRequest $request)
     {
 
-        /* User::create($request->validated()); */
-        #return $request->validated();
+        $request->validated();
 
-        #$request->validated();
-        #$user = new User();
-        #$user->name = request('name');
-        #$user->lastname = request('lastname');
-        #$user->email = request('email');
-        #$user->password = bcrypt(request('password'));
-        #$user->id_level = 2;
-        #$user->profession_id = rand(1, 3);
-        #$user->save();
         $user = User::create([
             'name' => $request->name,
             'lastname' => $request->lastname,
@@ -73,13 +63,6 @@ class UsersController extends Controller
 
     function update(User $user, SaveUserRequest $request)
     {
-        /* $user->update([
-            'name' => request('name'),
-            'lastname' => request('lastname'),
-            'email' => request('email'),
-            'password' => request('password')
-        ]); */
-
         $user->update($request->validated());
         return redirect()->route('users.show', $user)->with('success', "Datos de $user->name actualizados");
     }
