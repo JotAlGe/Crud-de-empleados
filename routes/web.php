@@ -11,9 +11,6 @@ use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-#Route::get('/users', [UsersController::class, 'index'])->name('users.index');
-#Route::get('/users/{id}', [UsersController::class, 'show'])->name('users.show');
-#Route::get('/users/create', [UsersController::class, 'create'])->name('users.create');
 Route::resource('users', UsersController::class);
 
 
@@ -23,3 +20,13 @@ Route::get('/levels', [LevelController::class, 'index'])->name('levels');
 
 #Auth::routes();
 Route::resource('emails', EmailController::class);
+
+
+// prueba
+Route::get('/prueba', function () {
+    return 'Has accedido a la ruta prueba!';
+})->middleware('age');
+
+Route::get('/no-autorizado', function () {
+    return 'Usted NO es mayor de edad';
+})->name('no-autorizado');
